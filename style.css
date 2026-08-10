@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f9fa;
+    color: #1e293b;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* 1. VRSTVA: Fixní mřížka v pozadí */
+body::before {
+    content: "";
+    position: fixed; 
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 12px 12px;
+    pointer-events: none;
+    z-index: -3;
+}
+
+/* 2. VRSTVA: Fixní GPS trasy na pozadí */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800' preserveAspectRatio='xMidYMid slice'%3E%3Cpath d='M -100 600 C 200 900, 300 100, 600 400 C 900 700, 1000 100, 1400 300' fill='none' stroke='%2338bdf8' stroke-width='2.5' opacity='0.4' /%3E%3Cpath d='M -100 400 C 400 300, 500 700, 800 500 C 1100 300, 1100 700, 1400 600' fill='none' stroke='%23000000' stroke-width='1.5' opacity='0.08' /%3E%3Cpath d='M 300 -100 C 100 300, 600 500, 500 900' fill='none' stroke='%23E5B882' stroke-width='1.5' opacity='0.3' /%3E%3C/svg%3E");
+    background-size: cover;
+    background-position: center;
+    pointer-events: none;
+    z-index: -2;
+}
+
+/* --- HLAVNÍ SEKCE --- */
+.hero-section {
+    position: relative;
+    flex: 1; 
+    display: flex;
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center;
+    gap: 60px; 
+    /* Upraveno odsazení: bez záhlaví může být obsah perfektně na středu */
+    padding: 60px 5%; 
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* --- KARTA S TEXTEM (Nyní ve stylu UI Aplikace) --- */
+.container {
+    max-width: 650px;
+    width: 100%;
+    background: #ffffff; 
+    
+    /* Nový luxusní zlatý/měděný rámeček kolem dokola */
+    border: 2px solid #C78F56; 
+    border-radius: 20px;
+    padding: 0; 
+    overflow: hidden; 
+    
+    /* Změnil jsem i stín na lehce zlatavý/měděný pro lepší sladění */
+    box-shadow: 0 20px 50px rgba(199, 142, 86, 0.15);
+    z-index: 1;
+}
+
+/* Nová horní navigační lišta */
+.app-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: #f1f5f9; 
+    /* Spodní linka lišty je nyní také zlatá/měděná */
+    border-bottom: 2px solid #C78F56; 
+    color: #64748b;
+}
+
+.icon-btn {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn:hover {
+    color: #0f172a;
+    /* Při najetí myší tlačítko jemně zezlátne místo zešedne */
+    background-color: rgba(199, 142, 86, 0.15); 
+}
+
+.bar-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    flex: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Svislé dělící linky jsou nyní zlaté/měděné a ladí s vnějším rámečkem */
+    border-left: 2px solid #C78F56; 
+    border-right: 2px solid #C78F56; 
+}
+
+
+.icon-btn {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.icon-btn:hover {
+    color: #0f172a;
+}
+
+/* Vnitřní obsah karty (vracíme původní odsazení a centrování) */
+.container-content {
+    padding: 50px 40px;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #0f172a; 
+}
+
+p {
+    font-size: 1.15rem;
+    color: #475569; 
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+.coming-soon-badge {
+    display: inline-block;
+    background-color: rgba(199, 142, 86, 0.15);
+    color: #b47030; 
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+    border: 1px solid rgba(199, 142, 86, 0.4);
+}
+
+/* --- FORMULÁŘ --- */
+.newsletter-form {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.newsletter-form input {
+    padding: 14px 18px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1.5px solid rgba(199, 142, 86, 0.4);
+    background-color: #ffffff; 
+    color: #0f172a;
+    outline: none;
+    flex: 1;
+    min-width: 260px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.newsletter-form input::placeholder {
+    color: #94a3b8;
+}
+
+.newsletter-form input:focus {
+    border-color: #C78F56;
+    box-shadow: 0 0 15px rgba(199, 142, 86, 0.2);
+}
+
+.newsletter-form button {
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #C78F56, #E5B982);
+    color: #0A0A10;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.2s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.newsletter-form button:hover {
+    box-shadow: 0 8px 20px rgba(199, 142, 86, 0.3);
+}
+
+.newsletter-form button:active {
+    transform: scale(0.98);
+}
+
+/* --- CSS MAKETA TELEFONU --- */
+.phone-mockup {
+    position: relative; 
+    width: 320px;
+    height: 650px;
+    flex-shrink: 0; 
+    z-index: 1;
+}
+
+.phone-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    border-radius: 40px; 
+    border: 12px solid #1e293b; 
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.3),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+    overflow: hidden; 
+}
+
+/* Výřez pro foťák nahoře (Notch) */
+.phone-frame::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 25px;
+    background-color: #1e293b;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    z-index: 4; /* Musí být nejvýš, nad displejem i stavovým řádkem */
+}
+
+/* NOVÉ: Stavový řádek (čas a baterie) */
+.phone-status-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 22px 10px; /* Zarovná prvky perfektně vedle notche */
+    z-index: 3;
+    color: #ffffff; /* Bílý text pro skvělou viditelnost na tvé tmavé fotce */
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    pointer-events: none; /* Nechceme, aby blokoval klikání pod sebou */
+}
+
+/* NOVÉ: Ikonka baterie vytvořená čistě přes CSS */
+.battery-icon {
+    width: 23px;
+    height: 11px;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    position: relative;
+    opacity: 0.9;
+}
+
+.battery-icon::after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 16px; /* Určuje stav nabití (teď je to cca 75%) */
+    height: 7px;
+    background-color: #ffffff;
+    border-radius: 1px;
+}
+
+.battery-icon::before {
+    content: "";
+    position: absolute;
+    right: -4px;
+    top: 2px;
+    width: 2px;
+    height: 5px;
+    background-color: #ffffff;
+    border-radius: 0 2px 2px 0; /* Špička baterie */
+}
+
+/* NOVÉ: Spodní domovská linka (Home bar jako u moderních telefonů) */
+.phone-home-bar {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    object-position: center; 
+    display: block;
+    background-color: #05070a; 
+}

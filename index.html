@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-arius | Balance Your Rhythm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="hero-section">
+        
+        <!-- 1. Hlavní panel s novým vzhledem aplikační karty -->
+        <div class="container">
+            <!-- Nová kotvící navigační lišta -->
+            <div class="app-top-bar">
+                <span class="icon-btn">&#8592;</span> <!-- Šipka zpět -->
+                <span class="bar-title">10. 8. 2026</span> <!-- Datum kalendáře -->
+                <span class="icon-btn">&#8942;</span> <!-- Tři tečky (menu) -->
+            </div>
+            
+            <div class="container-content">
+                <h1>Něco velkého se připravuje</h1>
+                <p>Aplikace pro tvůj trénink, kalisteniku a cirkadiánní rytmus. Pokročilá analýza tras, tempa a biometrie na jednom místě.</p>
+                
+                <div class="coming-soon-badge">Brzy spouštíme</div>
+
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Děkujeme za zájem! Budeme vás informovat.');">
+                    <input type="email" placeholder="Zadej svůj e-mail..." required>
+                    <button type="submit">Chci vědět první</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 2. CSS Maketa telefonu vpravo -->
+        <div class="phone-mockup">
+            <div class="phone-frame">
+                <!-- NOVÉ: Stavový řádek (čas a baterka) -->
+                <div class="phone-status-bar">
+                    <span class="time">19:52</span>
+                    <span class="battery-icon"></span>
+                </div>
+
+                <img src="bg-app.png" alt="Ukázka aplikace V-arius" class="phone-screen">
+
+                <!-- NOVÉ: Spodní navigační linka (Home bar) -->
+                <div class="phone-home-bar"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Zápatí webu -->
+    <footer class="site-footer">
+        <p>&copy; 2026 V-arius. Všechna práva vyhrazena.</p>
+    </footer>
+
+</body>
+</html>
