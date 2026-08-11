@@ -13,32 +13,34 @@
 
     <main class="hero-section">
         
-        <!-- 1. Hlavní panel s novým vzhledem aplikační karty -->
+        <!-- 1. Hlavní panel (karta s textem) -->
         <div class="container">
-            <!-- Nová kotvící navigační lišta -->
+            <!-- Kotvící navigační lišta -->
             <div class="app-top-bar">
                 <span class="icon-btn">&#8592;</span> <!-- Šipka zpět -->
                 <span class="bar-title">10. 8. 2026</span> <!-- Datum kalendáře -->
                 <span class="icon-btn">&#8942;</span> <!-- Tři tečky (menu) -->
             </div>
             
+            <!-- Obsah karty -->
             <div class="container-content">
-                <h1>Něco velkého se připravuje</h1>
-                <p>Aplikace pro tvůj trénink, kalisteniku a cirkadiánní rytmus. Pokročilá analýza tras, tempa a biometrie na jednom místě.</p>
+                <div class="coming-soon-badge">Vlastní projekt</div>
                 
-                <div class="coming-soon-badge">Brzy spouštíme</div>
-
+                <h1>Trénink a mapy.<br>Ale tak trochu jinak.</h1>
+                
+                <p>Běžné fitness aplikace mi vizuálně nesedly, tak si ve volném čase stavím vlastní. Zaměřuji se na netradiční uživatelské prostředí, čistší design map a trochu jiný způsob, jak zpracovávat a zobrazovat data z chytrých hodinek. Zatím systém ladím čistě pro sebe. Pokud tě tenhle směr zajímá, nech mi tu e-mail a dám ti vědět, až to uvolním ven.</p>
+                
                 <form class="newsletter-form" action="https://formspree.io/f/myegwydn" method="POST">
                     <input type="email" name="email" placeholder="Zadej svůj e-mail..." required>
-                    <button type="submit">Chci vědět první</button>
+                    <button type="submit">Chci vědět víc</button>
                 </form>
             </div>
-        </div>
+        </div> <!-- OPRAVENO: Zde teď karta správně končí -->
 
         <!-- 2. CSS Maketa telefonu vpravo -->
         <div class="phone-mockup">
             <div class="phone-frame">
-                <!-- NOVÉ: Stavový řádek (čas a baterka) -->
+                <!-- Stavový řádek (čas a baterka) -->
                 <div class="phone-status-bar">
                     <span class="time">19:52</span>
                     <span class="battery-icon"></span>
@@ -46,7 +48,7 @@
 
                 <img src="bg-app.png" alt="Ukázka aplikace V-arius" class="phone-screen">
 
-                <!-- NOVÉ: Spodní navigační linka (Home bar) -->
+                <!-- Spodní navigační linka (Home bar) -->
                 <div class="phone-home-bar"></div>
             </div>
         </div>
