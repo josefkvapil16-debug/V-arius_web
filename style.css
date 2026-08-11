@@ -49,26 +49,21 @@ body::after {
     justify-content: center; 
     align-items: center;
     gap: 60px; 
-    /* Upraveno odsazení: bez záhlaví může být obsah perfektně na středu */
     padding: 60px 5%; 
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
 }
 
-/* --- KARTA S TEXTEM (Nyní ve stylu UI Aplikace) --- */
+/* --- KARTA S TEXTEM --- */
 .container {
     max-width: 650px;
     width: 100%;
     background: #ffffff; 
-    
-    /* Nový luxusní zlatý/měděný rámeček kolem dokola */
     border: 2px solid #C78F56; 
     border-radius: 20px;
     padding: 0; 
     overflow: hidden; 
-    
-    /* Změnil jsem i stín na lehce zlatavý/měděný pro lepší sladění */
     box-shadow: 0 20px 50px rgba(199, 142, 86, 0.15);
     z-index: 1;
 }
@@ -79,7 +74,6 @@ body::after {
     justify-content: space-between;
     align-items: stretch;
     background-color: #f1f5f9; 
-    /* Spodní linka lišty je nyní také zlatá/měděná */
     border-bottom: 2px solid #C78F56; 
     color: #64748b;
 }
@@ -96,7 +90,6 @@ body::after {
 
 .icon-btn:hover {
     color: #0f172a;
-    /* Při najetí myší tlačítko jemně zezlátne místo zešedne */
     background-color: rgba(199, 142, 86, 0.15); 
 }
 
@@ -109,24 +102,11 @@ body::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    /* Svislé dělící linky jsou nyní zlaté/měděné a ladí s vnějším rámečkem */
     border-left: 2px solid #C78F56; 
     border-right: 2px solid #C78F56; 
 }
 
-
-.icon-btn {
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-
-.icon-btn:hover {
-    color: #0f172a;
-}
-
-/* Vnitřní obsah karty (vracíme původní odsazení a centrování) */
+/* Vnitřní obsah karty */
 .container-content {
     padding: 50px 40px;
     text-align: center;
@@ -236,7 +216,6 @@ p {
     overflow: hidden; 
 }
 
-/* Výřez pro foťák nahoře (Notch) */
 .phone-frame::before {
     content: "";
     position: absolute;
@@ -248,10 +227,9 @@ p {
     background-color: #1e293b;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
-    z-index: 4; /* Musí být nejvýš, nad displejem i stavovým řádkem */
+    z-index: 4; 
 }
 
-/* NOVÉ: Stavový řádek (čas a baterie) */
 .phone-status-bar {
     position: absolute;
     top: 0;
@@ -261,16 +239,15 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 0 22px 10px; /* Zarovná prvky perfektně vedle notche */
+    padding: 0 22px 10px; 
     z-index: 3;
-    color: #ffffff; /* Bílý text pro skvělou viditelnost na tvé tmavé fotce */
+    color: #ffffff; 
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.5px;
-    pointer-events: none; /* Nechceme, aby blokoval klikání pod sebou */
+    pointer-events: none; 
 }
 
-/* NOVÉ: Ikonka baterie vytvořená čistě přes CSS */
 .battery-icon {
     width: 23px;
     height: 11px;
@@ -285,7 +262,7 @@ p {
     position: absolute;
     top: 1px;
     left: 1px;
-    width: 16px; /* Určuje stav nabití (teď je to cca 75%) */
+    width: 16px; 
     height: 7px;
     background-color: #ffffff;
     border-radius: 1px;
@@ -299,10 +276,9 @@ p {
     width: 2px;
     height: 5px;
     background-color: #ffffff;
-    border-radius: 0 2px 2px 0; /* Špička baterie */
+    border-radius: 0 2px 2px 0; 
 }
 
-/* NOVÉ: Spodní domovská linka (Home bar jako u moderních telefonů) */
 .phone-home-bar {
     position: absolute;
     bottom: 10px;
@@ -323,4 +299,56 @@ p {
     object-position: center; 
     display: block;
     background-color: #05070a; 
+}
+
+/* =========================================
+   MOBILNÍ ZOBRAZENÍ (Karta i maketa telefonu)
+   ========================================= */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 30px 15px !important;
+        flex-direction: column !important; /* Skládá prvky pod sebe */
+        gap: 40px !important; /* Bezpečný rozestup mezi kartou a telefonem */
+        display: flex !important;
+    }
+
+    /* Karta s textem */
+    .container {
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .container-content {
+        padding: 25px 20px !important; /* Méně prázdného místa = hezčí proporce */
+    }
+
+    h1 {
+        font-size: 1.8rem !important; /* Zmenšený nadpis */
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1rem !important;
+        margin-bottom: 25px;
+    }
+
+    /* Formulář pod sebou přes celou šířku */
+    .newsletter-form {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .newsletter-form input, 
+    .newsletter-form button {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    /* Elegantně zmenšený telefon pro mobily */
+    .phone-mockup {
+        display: block !important; /* Telefon zůstává! */
+        width: 260px !important;   /* Zmenšená šířka (z původních 320px) */
+        height: 528px !important;  /* Úměrně zmenšená výška (aby nebyl roztažený) */
+        margin: 0 auto !important; /* Vycentrování na střed */
+    }
 }
