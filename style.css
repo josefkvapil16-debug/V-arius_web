@@ -1,3 +1,34 @@
+/* =========================================================================
+   V-arius web - vzhled převzatý z aplikace (světlý "pergamenový" režim).
+   Hodnoty odpovídají shift_2 app:
+   - FocusBoardStyles (focus_board_styles.dart): stůl, stránka, kartička, měď
+   - GridPainter (focus_board_painters.dart): mřížka 12 px + papírové zrno
+   - FocusBoardHeader: tečka se svitem, popisek JetBrains Mono 10.5/1.5
+   - SectionCard + statPanelDecoration (workout_stat_widgets.dart)
+   ========================================================================= */
+
+:root {
+    --desk: #D9C6A0;            /* warmDesk - stůl pod deskou */
+    --desk-2: #CFBD95;          /* warmDesk2 */
+    --page-top: #F6F0E2;        /* warmPageTop - stránka desky */
+    --page-bottom: #ECE2C8;     /* warmPageBottom */
+    --card: #FCF9F1;            /* warmCard - SectionCard */
+    --instrument: #E9DCBE;      /* warmInstrument - "hardware" plochy */
+    --hairline: #6B5638;        /* warmHairline - inkoustová linka */
+    --ink: #2A2118;
+    --ink-soft: #5C4E3C;
+    --ink-muted: #8A7A63;
+    --ink-faint: #AFA089;
+    --copper: #C78F56;          /* copperBase */
+    --copper-hi: #E5B882;       /* copperHighlight */
+    --copper-gold: #C89058;     /* kStatCopperGold - nadpisy karet */
+    --grain-board: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cg fill='%236B5638' fill-opacity='0.1'%3E%3Ccircle cx='148.3' cy='128.0' r='0.6'/%3E%3Ccircle cx='87.8' cy='140.6' r='0.6'/%3E%3Ccircle cx='39.8' cy='197.8' r='0.6'/%3E%3Ccircle cx='92.1' cy='189.5' r='0.6'/%3E%3Ccircle cx='221.2' cy='73.8' r='0.6'/%3E%3Ccircle cx='238.1' cy='49.2' r='0.6'/%3E%3Ccircle cx='157.5' cy='219.0' r='0.6'/%3E%3Ccircle cx='26.2' cy='196.9' r='0.6'/%3E%3Ccircle cx='95.7' cy='15.7' r='0.6'/%3E%3Ccircle cx='167.8' cy='83.5' r='0.6'/%3E%3Ccircle cx='96.9' cy='192.4' r='0.6'/%3E%3Ccircle cx='192.0' cy='159.3' r='0.6'/%3E%3Ccircle cx='199.8' cy='142.7' r='0.6'/%3E%3Ccircle cx='110.6' cy='229.8' r='0.6'/%3E%3Ccircle cx='191.0' cy='75.3' r='0.6'/%3E%3Ccircle cx='165.7' cy='219.6' r='0.6'/%3E%3Ccircle cx='109.7' cy='63.6' r='0.6'/%3E%3Ccircle cx='48.2' cy='16.2' r='0.6'/%3E%3Ccircle cx='126.1' cy='148.5' r='0.6'/%3E%3Ccircle cx='138.6' cy='10.5' r='0.6'/%3E%3Ccircle cx='97.8' cy='156.7' r='0.6'/%3E%3Ccircle cx='148.7' cy='162.1' r='0.6'/%3E%3Ccircle cx='152.4' cy='47.3' r='0.6'/%3E%3Ccircle cx='68.4' cy='108.6' r='0.6'/%3E%3Ccircle cx='220.0' cy='191.6' r='0.6'/%3E%3Ccircle cx='75.4' cy='190.9' r='0.6'/%3E%3Ccircle cx='146.6' cy='103.7' r='0.6'/%3E%3Ccircle cx='189.7' cy='131.9' r='0.6'/%3E%3Ccircle cx='186.2' cy='133.3' r='0.6'/%3E%3Ccircle cx='155.0' cy='203.6' r='0.6'/%3E%3Ccircle cx='51.3' cy='233.9' r='0.6'/%3E%3Ccircle cx='127.0' cy='126.8' r='0.6'/%3E%3Ccircle cx='186.1' cy='12.1' r='0.6'/%3E%3Ccircle cx='118.7' cy='176.8' r='0.6'/%3E%3Ccircle cx='109.2' cy='215.7' r='0.6'/%3E%3Ccircle cx='193.2' cy='117.0' r='0.6'/%3E%3Ccircle cx='180.5' cy='174.9' r='0.6'/%3E%3Ccircle cx='84.6' cy='134.0' r='0.6'/%3E%3Ccircle cx='136.6' cy='61.7' r='0.6'/%3E%3Ccircle cx='16.0' cy='31.3' r='0.6'/%3E%3Ccircle cx='14.1' cy='40.8' r='0.6'/%3E%3Ccircle cx='196.8' cy='46.0' r='0.6'/%3E%3Ccircle cx='228.6' cy='200.0' r='0.6'/%3E%3Ccircle cx='210.6' cy='133.1' r='0.6'/%3E%3Ccircle cx='102.5' cy='145.5' r='0.6'/%3E%3Ccircle cx='211.5' cy='223.4' r='0.6'/%3E%3Ccircle cx='103.2' cy='177.9' r='0.6'/%3E%3Ccircle cx='37.3' cy='152.1' r='0.6'/%3E%3Ccircle cx='83.4' cy='16.4' r='0.6'/%3E%3Ccircle cx='84.6' cy='162.4' r='0.6'/%3E%3Ccircle cx='144.2' cy='172.2' r='0.6'/%3E%3Ccircle cx='46.0' cy='116.2' r='0.6'/%3E%3Ccircle cx='147.2' cy='132.7' r='0.6'/%3E%3Ccircle cx='38.3' cy='170.7' r='0.6'/%3E%3Ccircle cx='202.2' cy='94.3' r='0.6'/%3E%3Ccircle cx='46.7' cy='183.1' r='0.6'/%3E%3Ccircle cx='150.0' cy='100.2' r='0.6'/%3E%3Ccircle cx='38.2' cy='112.6' r='0.6'/%3E%3Ccircle cx='167.4' cy='77.2' r='0.6'/%3E%3Ccircle cx='7.3' cy='144.0' r='0.6'/%3E%3Ccircle cx='153.9' cy='73.7' r='0.6'/%3E%3Ccircle cx='226.3' cy='131.1' r='0.6'/%3E%3Ccircle cx='187.4' cy='209.8' r='0.6'/%3E%3Ccircle cx='54.0' cy='73.3' r='0.6'/%3E%3Ccircle cx='105.6' cy='91.0' r='0.6'/%3E%3Ccircle cx='152.8' cy='34.6' r='0.6'/%3E%3Ccircle cx='196.9' cy='183.0' r='0.6'/%3E%3Ccircle cx='56.8' cy='195.1' r='0.6'/%3E%3Ccircle cx='20.6' cy='166.6' r='0.6'/%3E%3Ccircle cx='82.2' cy='201.9' r='0.6'/%3E%3C/g%3E%3C/svg%3E");
+    --grain-card: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cg fill='%236B5638' fill-opacity='0.07'%3E%3Ccircle cx='112.8' cy='174.8' r='0.6'/%3E%3Ccircle cx='72.9' cy='213.0' r='0.6'/%3E%3Ccircle cx='98.4' cy='172.0' r='0.6'/%3E%3Ccircle cx='63.7' cy='58.8' r='0.6'/%3E%3Ccircle cx='195.0' cy='119.6' r='0.6'/%3E%3Ccircle cx='99.8' cy='174.7' r='0.6'/%3E%3Ccircle cx='231.2' cy='74.3' r='0.6'/%3E%3Ccircle cx='169.0' cy='124.6' r='0.6'/%3E%3Ccircle cx='175.5' cy='239.9' r='0.6'/%3E%3Ccircle cx='49.5' cy='180.6' r='0.6'/%3E%3Ccircle cx='112.4' cy='170.2' r='0.6'/%3E%3Ccircle cx='209.3' cy='35.6' r='0.6'/%3E%3Ccircle cx='51.0' cy='98.9' r='0.6'/%3E%3Ccircle cx='14.0' cy='83.9' r='0.6'/%3E%3Ccircle cx='100.0' cy='29.8' r='0.6'/%3E%3Ccircle cx='178.4' cy='183.1' r='0.6'/%3E%3Ccircle cx='93.7' cy='82.9' r='0.6'/%3E%3Ccircle cx='48.3' cy='102.4' r='0.6'/%3E%3Ccircle cx='75.9' cy='51.4' r='0.6'/%3E%3Ccircle cx='208.3' cy='55.0' r='0.6'/%3E%3Ccircle cx='9.7' cy='54.1' r='0.6'/%3E%3Ccircle cx='4.7' cy='207.7' r='0.6'/%3E%3Ccircle cx='202.6' cy='76.6' r='0.6'/%3E%3Ccircle cx='230.5' cy='193.1' r='0.6'/%3E%3Ccircle cx='101.1' cy='26.9' r='0.6'/%3E%3Ccircle cx='204.3' cy='145.6' r='0.6'/%3E%3Ccircle cx='55.3' cy='238.8' r='0.6'/%3E%3Ccircle cx='87.8' cy='48.7' r='0.6'/%3E%3Ccircle cx='118.4' cy='200.8' r='0.6'/%3E%3Ccircle cx='33.9' cy='92.9' r='0.6'/%3E%3Ccircle cx='80.9' cy='225.6' r='0.6'/%3E%3Ccircle cx='239.8' cy='111.6' r='0.6'/%3E%3Ccircle cx='40.8' cy='166.9' r='0.6'/%3E%3Ccircle cx='206.7' cy='79.6' r='0.6'/%3E%3Ccircle cx='49.7' cy='164.8' r='0.6'/%3E%3Ccircle cx='23.5' cy='202.5' r='0.6'/%3E%3Ccircle cx='1.0' cy='36.2' r='0.6'/%3E%3Ccircle cx='168.9' cy='84.1' r='0.6'/%3E%3Ccircle cx='19.5' cy='192.7' r='0.6'/%3E%3Ccircle cx='57.4' cy='110.7' r='0.6'/%3E%3Ccircle cx='63.3' cy='125.7' r='0.6'/%3E%3Ccircle cx='104.6' cy='233.3' r='0.6'/%3E%3Ccircle cx='48.2' cy='17.0' r='0.6'/%3E%3Ccircle cx='72.6' cy='32.6' r='0.6'/%3E%3Ccircle cx='158.8' cy='60.0' r='0.6'/%3E%3Ccircle cx='24.1' cy='52.5' r='0.6'/%3E%3Ccircle cx='46.9' cy='93.3' r='0.6'/%3E%3Ccircle cx='123.7' cy='53.6' r='0.6'/%3E%3Ccircle cx='85.1' cy='168.6' r='0.6'/%3E%3Ccircle cx='191.9' cy='138.9' r='0.6'/%3E%3Ccircle cx='223.7' cy='130.6' r='0.6'/%3E%3Ccircle cx='224.7' cy='172.9' r='0.6'/%3E%3Ccircle cx='152.0' cy='28.5' r='0.6'/%3E%3Ccircle cx='13.4' cy='30.1' r='0.6'/%3E%3Ccircle cx='199.1' cy='217.6' r='0.6'/%3E%3Ccircle cx='147.6' cy='21.1' r='0.6'/%3E%3Ccircle cx='121.0' cy='56.7' r='0.6'/%3E%3Ccircle cx='140.1' cy='175.6' r='0.6'/%3E%3Ccircle cx='38.9' cy='30.1' r='0.6'/%3E%3Ccircle cx='25.0' cy='226.5' r='0.6'/%3E%3C/g%3E%3C/svg%3E");
+    --font-label: 'JetBrains Mono', ui-monospace, monospace;
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,9 +36,9 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f8f9fa;
-    color: #1e293b;
+    font-family: var(--font-body);
+    background-color: var(--desk);
+    color: var(--ink);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -15,196 +46,238 @@ body {
     overflow-x: hidden;
 }
 
-/* 1. VRSTVA: Fixní mřížka v pozadí */
-body::before {
-    content: "";
-    position: fixed; 
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-    background-size: 12px 12px;
-    pointer-events: none;
-    z-index: -3;
-}
-
-/* 2. VRSTVA: Fixní GPS trasy na pozadí */
+/* GPS trasy na stole (pod deskou) */
 body::after {
     content: "";
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800' preserveAspectRatio='xMidYMid slice'%3E%3Cpath d='M -100 600 C 200 900, 300 100, 600 400 C 900 700, 1000 100, 1400 300' fill='none' stroke='%2338bdf8' stroke-width='2.5' opacity='0.4' /%3E%3Cpath d='M -100 400 C 400 300, 500 700, 800 500 C 1100 300, 1100 700, 1400 600' fill='none' stroke='%23000000' stroke-width='1.5' opacity='0.08' /%3E%3Cpath d='M 300 -100 C 100 300, 600 500, 500 900' fill='none' stroke='%23E5B882' stroke-width='1.5' opacity='0.3' /%3E%3C/svg%3E");
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800' preserveAspectRatio='xMidYMid slice'%3E%3Cpath d='M -100 600 C 200 900, 300 100, 600 400 C 900 700, 1000 100, 1400 300' fill='none' stroke='%235AC8FA' stroke-width='2.5' opacity='0.45' /%3E%3Cpath d='M -100 400 C 400 300, 500 700, 800 500 C 1100 300, 1100 700, 1400 600' fill='none' stroke='%236B5638' stroke-width='1.5' opacity='0.18' /%3E%3Cpath d='M 300 -100 C 100 300, 600 500, 500 900' fill='none' stroke='%23FCF9F1' stroke-width='1.5' opacity='0.6' /%3E%3C/svg%3E");
     background-size: cover;
     background-position: center;
     pointer-events: none;
     z-index: -2;
 }
 
-/* --- HLAVNÍ SEKCE --- */
+/* --- ROZVRŽENÍ --- */
 .hero-section {
-    position: relative;
-    flex: 1; 
+    flex: 1;
     display: flex;
-    flex-direction: row; 
-    justify-content: center; 
-    
-    /* ZMĚNA 1: Prvky už nebudou viset ve středu, ale ukotví se nahoru */
-    align-items: flex-start; 
-    
-    /* ZMĚNA 2: Odsazení odshora určíme na 10vh (10 % výšky obrazovky) */
-    padding: 10vh 5% 60px 5%; 
-    
-    gap: 60px; 
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10vh 5% 60px;
+    gap: 60px;
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
 }
 
-/* --- KARTA S TEXTEM --- */
-.container {
+/* =========================================================================
+   DESKA (FocusBoard): měděný přechodový rám 2 px → papírová stránka
+   s mřížkou a zrnem → hlavička → 2px měděná linka → obsah
+   ========================================================================= */
+.board {
     max-width: 650px;
     width: 100%;
-    background: #ffffff; 
-    border: 2px solid #C78F56; 
-    border-radius: 20px;
-    padding: 0; 
-    overflow: hidden; 
-    box-shadow: 0 20px 50px rgba(199, 142, 86, 0.15);
+    padding: 2px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #3B2A1E, #8B5A2B, #C78F56, #E5B982);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.45);
     z-index: 1;
 }
 
-/* Nová horní navigační lišta */
-.app-top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    background-color: #f1f5f9; 
-    border-bottom: 2px solid #C78F56; 
-    color: #64748b;
+.board-inner {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--page-top);
+    background-image:
+        var(--grain-board),
+        linear-gradient(rgba(107, 86, 56, 0.14) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(107, 86, 56, 0.14) 1px, transparent 1px),
+        linear-gradient(180deg, var(--page-top), var(--page-bottom));
+    background-size: 240px 240px, 12px 12px, 12px 12px, 100% 100%;
 }
 
-.icon-btn {
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: color 0.2s, background-color 0.2s;
-    padding: 16px 24px;
+.board-header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 8px;
+    padding: 9px 16px;
+    min-height: 48px;
 }
 
-.icon-btn:hover {
-    color: #0f172a;
-    background-color: rgba(199, 142, 86, 0.15); 
+.board-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--copper-gold);
+    box-shadow: 0 0 4px var(--copper-gold);
+    flex-shrink: 0;
 }
 
-.bar-title {
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 1px;
+.board-title {
+    flex: 1;
+    min-width: 0;
+    font-family: var(--font-label);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    flex: 1; 
+    color: var(--ink-soft);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Šipka zpět vpravo v hlavičce - měděná, jako Icons.arrow_back v aplikaci */
+.board-action {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-left: 2px solid #C78F56; 
-    border-right: 2px solid #C78F56; 
+    padding: 4px 0 4px 16px;
+    color: var(--copper-gold);
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: none;
 }
 
-/* Vnitřní obsah karty */
-.container-content {
-    padding: 50px 40px;
-    text-align: center;
+.board-action svg { width: 28px; height: 28px; }
+
+.board-divider {
+    height: 2px;
+    background: var(--copper);
 }
 
-h1 {
-    font-family: 'Roboto Slab', serif;
-    font-size: 2.8rem;
-    margin-bottom: 20px;
+.board-body {
+    padding: 12px;
+}
+
+/* =========================================================================
+   KARTA (SectionCard + statPanelDecoration ve světlém režimu)
+   ========================================================================= */
+.section-card {
+    position: relative;
+    background-color: var(--card);
+    background-image: var(--grain-card);
+    background-size: 240px 240px;
+    border: 1px solid rgba(107, 86, 56, 0.12);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(107, 86, 56, 0.16);
+    padding: 16px;
+}
+
+.section-card + .section-card { margin-top: 12px; }
+
+.section-title {
+    font-family: var(--font-label);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--copper-gold);
+    margin-bottom: 12px;
+}
+
+.section-card p,
+.section-card li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+}
+
+.section-card p + p,
+.section-card ul + p { margin-top: 10px; }
+.section-card .nowrap { white-space: nowrap; }
+.section-card ul { margin: 10px 0 0 18px; }
+.section-card li + li { margin-top: 6px; }
+
+.section-card a,
+.site-footer a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--copper);
+}
+
+/* Čip (vybraný stav záložky - FocusBoardStyles.tabDecoration) */
+.chip {
+    display: inline-block;
+    font-family: var(--font-label);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    background: rgba(199, 142, 86, 0.25);
+    border: 1.5px solid var(--copper-hi);
+    border-radius: 8px;
+    padding: 6px 12px;
+}
+
+/* --- ÚVOD --- */
+.intro h1 {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    line-height: 1.15;
     font-weight: 700;
     letter-spacing: -0.5px;
-    color: #0f172a; 
+    color: var(--ink);
+    margin: 14px 0 14px;
 }
 
-p {
-    font-size: 1.15rem;
-    color: #475569; 
-    margin-bottom: 35px;
-    line-height: 1.6;
-}
-
-.coming-soon-badge {
-    display: inline-block;
-    background-color: rgba(199, 142, 86, 0.15);
-    color: #b47030; 
-    padding: 8px 18px;
-    border-radius: 30px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 35px;
-    border: 1px solid rgba(199, 142, 86, 0.4);
+.intro p {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--ink-soft);
 }
 
 /* --- FORMULÁŘ --- */
 .newsletter-form {
     display: flex;
-    gap: 12px;
-    justify-content: center;
+    gap: 10px;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .newsletter-form input {
-    padding: 14px 18px;
-    font-size: 1rem;
-    border-radius: 10px;
-    border: 1.5px solid rgba(199, 142, 86, 0.4);
-    background-color: #ffffff; 
-    color: #0f172a;
-    outline: none;
     flex: 1;
-    min-width: 260px;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    font-family: 'Montserrat', sans-serif;
+    min-width: 220px;
+    padding: 13px 16px;
+    font: 1rem var(--font-body);
+    color: var(--ink);
+    background: var(--page-top);
+    border: 1.5px solid rgba(107, 86, 56, 0.25);
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s;
 }
 
-.newsletter-form input::placeholder {
-    color: #94a3b8;
-}
-
-.newsletter-form input:focus {
-    border-color: #C78F56;
-    box-shadow: 0 0 15px rgba(199, 142, 86, 0.2);
-}
+.newsletter-form input::placeholder { color: var(--ink-faint); }
+.newsletter-form input:focus { border-color: var(--copper); }
 
 .newsletter-form button {
-    padding: 14px 28px;
-    font-size: 1rem;
-    font-weight: 600;
+    padding: 13px 24px;
+    font-family: var(--font-label);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: rgba(199, 142, 86, 0.25);
+    border: 1.5px solid var(--copper-hi);
     border-radius: 10px;
-    border: none;
-    background: linear-gradient(135deg, #C78F56, #E5B982);
-    color: #0A0A10;
     cursor: pointer;
-    transition: transform 0.1s, box-shadow 0.2s;
-    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.2s;
 }
 
-.newsletter-form button:hover {
-    box-shadow: 0 8px 20px rgba(199, 142, 86, 0.3);
-}
+.newsletter-form button:hover { background: rgba(199, 142, 86, 0.4); }
+.newsletter-form button:active { transform: scale(0.98); }
 
-.newsletter-form button:active {
-    transform: scale(0.98);
-}
-
-/* --- CSS MAKETA TELEFONU --- */
+/* --- MAKETA TELEFONU --- */
 .phone-mockup {
-    position: relative; 
+    position: relative;
     width: 320px;
     height: 650px;
-    flex-shrink: 0; 
+    flex-shrink: 0;
     z-index: 1;
 }
 
@@ -213,12 +286,10 @@ p {
     width: 100%;
     height: 100%;
     background-color: #000;
-    border-radius: 40px; 
-    border: 12px solid #1e293b; 
-    box-shadow: 
-        0 30px 60px rgba(0, 0, 0, 0.3),
-        inset 0 0 0 2px rgba(255, 255, 255, 0.1);
-    overflow: hidden; 
+    border-radius: 40px;
+    border: 12px solid #2A2118;
+    box-shadow: 0 30px 60px rgba(42, 33, 24, 0.35), inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
 }
 
 .phone-frame::before {
@@ -229,10 +300,10 @@ p {
     transform: translateX(-50%);
     width: 120px;
     height: 25px;
-    background-color: #1e293b;
+    background-color: #2A2118;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
-    z-index: 4; 
+    z-index: 4;
 }
 
 .phone-status-bar {
@@ -244,19 +315,19 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 0 22px 10px; 
+    padding: 0 22px 10px;
     z-index: 3;
-    color: #ffffff; 
+    color: #fff;
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.5px;
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 .battery-icon {
     width: 23px;
     height: 11px;
-    border: 1px solid #ffffff;
+    border: 1px solid #fff;
     border-radius: 3px;
     position: relative;
     opacity: 0.9;
@@ -267,9 +338,9 @@ p {
     position: absolute;
     top: 1px;
     left: 1px;
-    width: 16px; 
+    width: 16px;
     height: 7px;
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 1px;
 }
 
@@ -280,8 +351,8 @@ p {
     top: 2px;
     width: 2px;
     height: 5px;
-    background-color: #ffffff;
-    border-radius: 0 2px 2px 0; 
+    background-color: #fff;
+    border-radius: 0 2px 2px 0;
 }
 
 .phone-home-bar {
@@ -300,71 +371,43 @@ p {
 .phone-screen {
     width: 100%;
     height: 100%;
-    object-fit: contain; 
-    object-position: center; 
+    object-fit: contain;
+    object-position: center;
     display: block;
-    background-color: #05070a; 
+    background-color: #05070a;
 }
 
 /* --- ZÁPATÍ --- */
-.site-footer a {
-    color: #b47030;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(199, 142, 86, 0.4);
+.site-footer {
+    text-align: center;
+    padding: 8px 16px 32px;
+    font-family: var(--font-label);
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 2;
+    color: var(--ink-soft);
 }
 
-.site-footer a:hover {
-    border-bottom-color: #b47030;
-}
-
-/* =========================================
-   MOBILNÍ ZOBRAZENÍ (Karta i maketa telefonu)
-   ========================================= */
+/* --- MOBIL --- */
 @media (max-width: 768px) {
     .hero-section {
-        padding: 30px 15px !important;
-        flex-direction: column !important; /* Skládá prvky pod sebe */
-        gap: 40px !important; /* Bezpečný rozestup mezi kartou a telefonem */
-        display: flex !important;
-    }
-
-    /* Karta s textem */
-    .container {
-        width: 100% !important;
-        margin: 0 auto !important;
-    }
-
-    .container-content {
-        padding: 25px 20px !important; /* Méně prázdného místa = hezčí proporce */
-    }
-
-    h1 {
-        font-size: 1.8rem !important; /* Zmenšený nadpis */
-        margin-bottom: 10px;
-    }
-
-    p {
-        font-size: 1rem !important;
-        margin-bottom: 25px;
-    }
-
-    /* Formulář pod sebou přes celou šířku */
-    .newsletter-form {
         flex-direction: column;
-        gap: 12px;
+        align-items: stretch;
+        padding: 16px 8px 40px;
+        gap: 40px;
     }
 
-    .newsletter-form input, 
-    .newsletter-form button {
-        width: 100%;
-        min-width: 100%;
-    }
+    .board { max-width: none; }
+    .intro h1 { font-size: 1.8rem; }
+    .intro p { font-size: 1rem; }
 
-    /* Elegantně zmenšený telefon pro mobily */
+    .newsletter-form { flex-direction: column; }
+    .newsletter-form input,
+    .newsletter-form button { width: 100%; min-width: 0; }
+
     .phone-mockup {
-        display: block !important; /* Telefon zůstává! */
-        width: 260px !important;   /* Zmenšená šířka (z původních 320px) */
-        height: 528px !important;  /* Úměrně zmenšená výška (aby nebyl roztažený) */
-        margin: 0 auto !important; /* Vycentrování na střed */
+        width: 260px;
+        height: 528px;
+        margin: 0 auto;
     }
 }
