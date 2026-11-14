@@ -306,6 +306,17 @@ p {
     background-color: #05070a; 
 }
 
+/* --- ZÁPATÍ --- */
+.site-footer a {
+    color: #b47030;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(199, 142, 86, 0.4);
+}
+
+.site-footer a:hover {
+    border-bottom-color: #b47030;
+}
+
 /* =========================================
    MOBILNÍ ZOBRAZENÍ (Karta i maketa telefonu)
    ========================================= */
