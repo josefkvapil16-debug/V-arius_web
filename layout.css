@@ -1,0 +1,351 @@
+/* =========================================================================
+   V-arius web - lišta, klikací telefon, stránka Funkce.
+   Navazuje na style.css (tokeny + deska/karty). Lišta = AppNavigationBar
+   + NavBarItemPainter z aplikace ve světlém režimu.
+   ========================================================================= */
+
+/* --- LIŠTA (AppNavigationBar) --- */
+.app-nav {
+    display: flex;
+    gap: 6px;
+    width: 100%;
+    max-width: 520px;
+    margin: 24px auto 0;
+    padding: 0 8px;
+    z-index: 5;
+}
+
+.nav-item {
+    position: relative;
+    flex: 1;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    text-decoration: none;
+    color: #9C8C74;
+    background: var(--instrument);
+    border-radius: 10px;
+    border: 1.5px solid rgba(107, 86, 56, 0.55);
+    box-shadow: inset 0.5px 0.5px 0 rgba(255, 255, 255, 0.6);
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: background-color 0.15s;
+}
+
+/* decentní prolis na dně vystouplého tlačítka */
+.nav-item::after {
+    content: "";
+    position: absolute;
+    left: 30%;
+    right: 30%;
+    bottom: 7px;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.nav-item svg { width: 24px; height: 24px; }
+.nav-item:hover { background: #E2D3B1; }
+
+/* vybrané = zamáčknuté + "laserový" pásek nahoře */
+.nav-item[aria-current="page"] {
+    color: var(--ink);
+    background: #D4C39C;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.nav-item[aria-current="page"] svg { color: var(--copper-gold); }
+.nav-item[aria-current="page"]::after { display: none; }
+
+.nav-item[aria-current="page"]::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 30%;
+    right: 30%;
+    height: 1.5px;
+    border-radius: 2px;
+    background: var(--copper-gold);
+}
+
+/* --- KLIKACÍ TELEFON --- */
+.phone-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+.phone-gallery .phone-mockup { cursor: pointer; }
+
+.phone-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.phone-slide.is-active { opacity: 1; }
+
+/* místo pro screen, který ještě nemáme */
+.phone-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 24px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.55);
+    font-family: var(--font-label);
+    font-size: 10.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(180deg, #0A0A10, #14141F);
+    background-size: 12px 12px, 12px 12px, 100% 100%;
+}
+
+.phone-placeholder b { color: var(--copper-hi); font-weight: 700; }
+
+.gallery-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.gallery-caption {
+    font-family: var(--font-label);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    min-height: 1.4em;
+    text-align: center;
+}
+
+.gallery-dots { display: flex; gap: 6px; }
+
+.gallery-dots button {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid var(--copper);
+    background: transparent;
+    cursor: pointer;
+}
+
+.gallery-dots button[aria-current="true"] {
+    background: var(--copper-gold);
+    box-shadow: 0 0 4px var(--copper-gold);
+}
+
+.gallery-arrow {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: 1.5px solid rgba(107, 86, 56, 0.55);
+    background: var(--instrument);
+    color: var(--ink-soft);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.gallery-arrow:hover { background: #E2D3B1; }
+
+.data-note {
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    text-align: center;
+    max-width: 280px;
+}
+
+/* --- ÚVOD: přednosti --- */
+.highlights {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.highlight {
+    background: var(--page-top);
+    border: 1px solid rgba(107, 86, 56, 0.12);
+    border-radius: 10px;
+    padding: 12px 14px;
+}
+
+.highlight strong {
+    display: block;
+    font-family: var(--font-label);
+    font-size: 10.5px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--copper-gold);
+    margin-bottom: 4px;
+}
+
+.highlight span {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+}
+
+.cta-link {
+    display: inline-block;
+    margin-top: 14px;
+    font-family: var(--font-label);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--copper);
+}
+
+/* --- FUNKCE --- */
+.features .board { max-width: 980px; }
+
+.feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 24px;
+    align-items: center;
+}
+
+.feature:nth-child(even) { grid-template-columns: 220px minmax(0, 1fr); }
+.feature:nth-child(even) .feature-phone { order: -1; }
+
+.feature-num {
+    font-family: var(--font-label);
+    font-size: 10.5px;
+    letter-spacing: 1.5px;
+    color: var(--ink-faint);
+}
+
+.feature h2 {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    line-height: 1.2;
+    color: var(--ink);
+    margin: 4px 0 8px;
+}
+
+.feature-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.feature-tags span {
+    font-family: var(--font-label);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    background: rgba(107, 86, 56, 0.08);
+    border-radius: 8px;
+    padding: 5px 9px;
+}
+
+.feature-phone .phone-mockup {
+    width: 220px;
+    height: 447px;
+}
+
+.feature-phone .phone-frame { border-width: 9px; border-radius: 30px; }
+.feature-phone .phone-frame::before { width: 84px; height: 18px; }
+
+/* --- MOBIL: lišta dole jako v aplikaci --- */
+@media (max-width: 768px) {
+    body { padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+
+    .app-nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        max-width: none;
+        margin: 0;
+        padding: 6px 6px calc(6px + env(safe-area-inset-bottom));
+        background: var(--desk-2);
+        border-top: 1px solid rgba(107, 86, 56, 0.25);
+    }
+
+    .highlights { grid-template-columns: minmax(0, 1fr); }
+
+    .feature,
+    .feature:nth-child(even) { grid-template-columns: minmax(0, 1fr); }
+    .feature:nth-child(even) .feature-phone { order: 0; }
+    .feature-phone { display: flex; justify-content: center; }
+}
+
+/* --- PŘEPÍNAČ SVĚTLÝ / TMAVÝ (jako záložky v aplikaci) --- */
+.mode-switch {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    border-radius: 10px;
+    background: rgba(107, 86, 56, 0.08);
+}
+
+.mode-switch button {
+    font-family: var(--font-label);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    background: transparent;
+    border: 1.5px solid transparent;
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.mode-switch button[aria-pressed="true"] {
+    color: var(--ink);
+    background: rgba(199, 142, 86, 0.25);
+    border-color: var(--copper-hi);
+}
+
+/* chybějící screen: schovat obrázek, ukázat místo pro ukázku */
+.phone-slide .phone-placeholder { display: none; }
+.phone-slide.is-missing .phone-placeholder { display: flex; }
+.phone-slide.is-missing img { display: none; }
+
+.features-intro .mode-switch { display: inline-flex; margin-top: 12px; }
+.section-card.feature + .section-card.feature,
+.features-intro + .section-card { margin-top: 12px; }
+
+/* pod lištou stačí menší odsazení než 10vh z style.css */
+.app-nav + .hero-section { padding-top: 32px; }
+@media (max-width: 768px) {
+    .app-nav + .hero-section { padding-top: 16px; }
+}
+
+/* screeny vyplní displej odshora (spodek je jen prázdná oblast pod lištou) */
+.phone-slide .phone-screen { object-fit: cover; object-position: top; }
+
+/* světlé screeny: tmavý čas a baterka, jako má iPhone ve světlém režimu */
+html[data-screen-mode="light"] .phone-status-bar { color: #2A2118; }
+html[data-screen-mode="light"] .battery-icon { border-color: #2A2118; }
+html[data-screen-mode="light"] .battery-icon::after,
+html[data-screen-mode="light"] .battery-icon::before { background-color: #2A2118; }
+html[data-screen-mode="light"] .phone-home-bar { background-color: rgba(42, 33, 24, 0.7); }

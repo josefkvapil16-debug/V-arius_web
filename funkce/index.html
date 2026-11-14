@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>V-arius | Funkce</title>
+    <meta name="description" content="Co umí V-arius: směny a kalendář, energie a únava, zdraví, tréninkové plány, mapy, švihadlo, tanec, vybavení a síň slávy.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../layout.css">
+</head>
+<body>
+
+    <nav class="app-nav" aria-label="Navigace">
+        <a class="nav-item" href="../">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21"/></svg>
+            Úvod
+        </a>
+        <a class="nav-item" href="./" aria-current="page">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>
+            Funkce
+        </a>
+        <a class="nav-item" href="../privacy/?lang=cs">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6L12 3z"/><path d="M9 12l2 2 4-4"/></svg>
+            Soukromí
+        </a>
+    </nav>
+
+    <main class="hero-section features">
+        <div class="board">
+            <div class="board-inner">
+                <div class="board-header">
+                    <span class="board-dot"></span>
+                    <span class="board-title">Funkce • <span class="js-today"></span></span>
+                    <a class="board-action" href="../" aria-label="Zpět na úvod"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></a>
+                </div>
+                <div class="board-divider"></div>
+
+                <div class="board-body">
+                    <section class="section-card features-intro">
+                        <h2 class="section-title">Co V-arius umí</h2>
+                        <p>Přehled hlavních oblastí aplikace. Ukázky obsahují skutečná data autora a jsou ve světlém i tmavém vzhledu.</p>
+                        <div class="mode-switch" role="group" aria-label="Vzhled">
+                            <button type="button" data-mode="light">Světlý</button>
+                            <button type="button" data-mode="dark">Tmavý</button>
+                        </div>
+                    </section>
+
+                    <section class="section-card feature">
+                        <div>
+                            <span class="feature-num">01</span>
+                            <h2>Směny a kalendář</h2>
+                            <p>Rozpis směn je základ, od kterého se odvíjí všechno ostatní. Kruhový ciferník měsíce nebo týdenní rozvrh, podle toho, jak člověk pracuje.</p>
+                            <div class="feature-tags"><span>Ranní / odpolední / noční</span><span>12hodinová rotace</span><span>Týdenní rozvrh</span><span>Přesčasy</span><span>Dojíždění</span><span>Státní svátky</span><span>Statistiky podle směn</span></div>
+                        </div>
+                        <div class="feature-phone">
+                            <div class="phone-mockup">
+                                <div class="phone-frame">
+                                    <div class="phone-status-bar"><span class="js-clock"></span><span class="battery-icon"></span></div>
+                                    <div class="phone-slide is-active" data-caption="Kalendář směn"><img class="phone-screen" data-light="../screens/kalendar-light.jpg" data-dark="../screens/kalendar-dark.jpg" alt="Kalendář směn"></div>
+                                    <div class="phone-home-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section-card feature">
+                        <div>
+                            <span class="feature-num">02</span>
+                            <h2>Energie a únava</h2>
+                            <p>Odhad únavy a bdělosti, který bere v úvahu směnu, spánek, trénink i dojíždění. Ukazuje, jak den skutečně zatížil, a dává předpověď na další dny.</p>
+                            <div class="feature-tags"><span>Model únavy podle směn</span><span>Předpověď na další dny</span><span>Spánek a trénink v jednom</span><span>Ženský cyklus a tlak</span></div>
+                        </div>
+                        <div class="feature-phone">
+                            <div class="phone-mockup">
+                                <div class="phone-frame">
+                                    <div class="phone-status-bar"><span class="js-clock"></span><span class="battery-icon"></span></div>
+                                    <div class="phone-slide is-active" data-caption="Energie"><img class="phone-screen" data-light="../screens/energie-light.jpg" data-dark="../screens/energie-dark.jpg" alt="Energie"></div>
+                                    <div class="phone-home-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section-card feature">
+                        <div>
+                            <span class="feature-num">03</span>
+                            <h2>Zdraví a tělo</h2>
+                            <p>Údaje z Apple Health a Health Connect přehledně na jednom místě a vždy v kontextu směn. Kroky se třeba dělí na pracovní dobu, aktivitu a volno.</p>
+                            <div class="feature-tags"><span>Spánek</span><span>Kroky</span><span>Tep a HRV</span><span>SpO2</span><span>Teplota kůže</span><span>Krevní tlak</span><span>Váha a tělesné míry</span><span>Ženské zdraví</span><span>Zranění na modelu těla</span></div>
+                        </div>
+                        <div class="feature-phone">
+                            <div class="phone-mockup">
+                                <div class="phone-frame">
+                                    <div class="phone-status-bar"><span class="js-clock"></span><span class="battery-icon"></span></div>
+                                    <div class="phone-slide is-active" data-caption="Zdraví"><img class="phone-screen" data-light="../screens/zdravi-light.jpg" data-dark="../screens/zdravi-dark.jpg" alt="Zdraví"></div>
+                                    <div class="phone-home-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section-card feature">
+                        <div>
+                            <span class="feature-num">04</span>
+                            <h2>Tréninky a plány</h2>
+                            <p>Tréninkový plán, který počítá se směnami. Silová a vytrvalostní část v jednom týdnu, knihovna cviků s modelem těla a po skončení bloku návrh dalšího podle historie.</p>
+                            <div class="feature-tags"><span>Editor plánu</span><span>Knihovna cviků</span><span>Model těla</span><span>Silový i vytrvalostní plán</span><span>Návrh dalšího bloku</span><span>Rádce během tréninku</span></div>
+                        </div>
+                        <div class="feature-phone phone-gallery" data-gallery>
+                            <div class="phone-mockup">
+                                <div class="phone-frame">
+                                    <div class="phone-status-bar"><span class="js-clock"></span><span class="battery-icon"></span></div>
+                                    <div class="phone-slide" data-caption="Aktivní plán"><img class="phone-screen" data-light="../screens/plan-light.jpg" data-dark="../screens/plan-dark.jpg" alt="Aktivní plán"></div><div class="phone-slide" data-caption="Vytrvalostní plán a výhled"><img class="phone-screen" data-light="../screens/plan2-light.jpg" data-dark="../screens/plan2-dark.jpg" alt="Vytrvalostní plán a výhled"></div><div class="phone-slide" data-caption="Doporučení podle směn"><img class="phone-screen" data-light="../screens/plan3-light.jpg" data-dark="../screens/plan3-dark.jpg" alt="Doporučení podle směn"></div>
+                                    <div class="phone-home-bar"></div>
+                                </div>
+                            </div>
+                            <div class="gallery-caption"></div>
+                            <div class="gallery-controls">
+                                <button class="gallery-arrow" type="button" data-dir="-1" aria-label="Předchozí">‹</button>
+                                <div class="gallery-dots"></div>
+                                <button class="gallery-arrow" type="button" data-dir="1" aria-label="Další">›</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section-card feature">
+                        <div>
+                            <span class="feature-num">05</span>
+                            <h2>Aktivity a mapy</h2>
+                            <p>Detail každého tréninku s trasou na mapě, rozdělením na úseky a srovnáním s předchozími výkony. Fotky z cesty se ukládají přímo k trase.</p>
+                            <div class="feature-tags"><span>Trasa na mapě</span><span>Úseky</span><span>Srovnání tréninků</span><span>Tepové zóny</span><span>Fotky z trasy</span></div>
+                        </div>
+                        <div class="feature-phone">
+                            <div class="phone-mockup">
+                                <div class="phone-frame">
+                                    <div class="phone-status-bar"><span class="js-clock"></span><span class="battery-icon"></span></div>
+                                    <div class="phone-slide is-active" data-caption="Trénink na mapě"><img class="phone-screen" data-light="../screens/mapa-light.jpg" data-dark="../screens/mapa-dark.jpg" alt="Trénink na mapě"></div>
+                                    <div class="phone-home-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section-card feature">
+                        <div>
+                            <span class="feature-num">06</span>
+                            <h2>Nejen běh a posilovna</h2>
+                            <p>Deník zapisuje i aktivity, na které běžné aplikace nemyslí. Švihadlo s triky a jejich historií, taneční repertoár s figurami a sdílením s partnerem přes QR kód, zápasy i golf.</p>
+                            <div class="feature-tags"><span>Švihadlo a triky</span><span>Taneční repertoár</span><span>Sdílení přes QR</span><span>Zápasy</span><span>Golf</span></div>
+                        </div>
+                        <div class="feature-phone phone-gallery" data-gallery>
+                            <div class="phone-mockup">
+                                <div class="phone-frame">
+                                    <div class="phone-status-bar"><span class="js-clock"></span><span class="battery-icon"></span></div>
+                                    <div class="phone-slide" data-caption="Švihadlo – souhrn a zátěž"><img class="phone-screen" data-light="../screens/aktivity-light.jpg" data-dark="../screens/aktivity-dark.jpg" alt="Švihadlo – souhrn a zátěž"></div><div class="phone-slide" data-caption="Švihadlo – vývoj a triky"><img class="phone-screen" data-light="../screens/aktivity2-light.jpg" data-dark="../screens/aktivity2-dark.jpg" alt="Švihadlo – vývoj a triky"></div>
+                                    <div class="phone-home-bar"></div>
+                                </div>
+                            </div>
+                            <div class="gallery-caption"></div>
+                            <div class="gallery-controls">
+                                <button class="gallery-arrow" type="button" data-dir="-1" aria-label="Předchozí">‹</button>
+                                <div class="gallery-dots"></div>
+                                <button class="gallery-arrow" type="button" data-dir="1" aria-label="Další">›</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section-card feature">
+                        <div>
+                            <span class="feature-num">07</span>
+                            <h2>Vybavení</h2>
+                            <p>Přehled boty, kola a dalšího vybavení. Opotřebení po jednotlivých dílech, servisní deník, záruky a zápůjčky.</p>
+                            <div class="feature-tags"><span>Opotřebení po dílech</span><span>Servisní deník</span><span>Záruky</span><span>Zápůjčky</span><span>Archiv</span></div>
+                        </div>
+                        <div class="feature-phone phone-gallery" data-gallery>
+                            <div class="phone-mockup">
+                                <div class="phone-frame">
+                                    <div class="phone-status-bar"><span class="js-clock"></span><span class="battery-icon"></span></div>
+                                    <div class="phone-slide" data-caption="Katalog vybavení"><img class="phone-screen" data-light="../screens/vybaveni-light.jpg" data-dark="../screens/vybaveni-dark.jpg" alt="Katalog vybavení"></div><div class="phone-slide" data-caption="Opotřebení a tipy"><img class="phone-screen" data-light="../screens/vybaveni2-light.jpg" data-dark="../screens/vybaveni2-dark.jpg" alt="Opotřebení a tipy"></div>
+                                    <div class="phone-home-bar"></div>
+                                </div>
+                            </div>
+                            <div class="gallery-caption"></div>
+                            <div class="gallery-controls">
+                                <button class="gallery-arrow" type="button" data-dir="-1" aria-label="Předchozí">‹</button>
+                                <div class="gallery-dots"></div>
+                                <button class="gallery-arrow" type="button" data-dir="1" aria-label="Další">›</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section-card feature">
+                        <div>
+                            <span class="feature-num">08</span>
+                            <h2>Síň slávy</h2>
+                            <p>Místo pro závody, výsledky a medaile. Výsledkové karty s fotkami a trasou, ke kterým se člověk rád vrací.</p>
+                            <div class="feature-tags"><span>Závody</span><span>Výsledky</span><span>Medaile</span><span>Galerie fotek</span></div>
+                        </div>
+                        <div class="feature-phone">
+                            <div class="phone-mockup">
+                                <div class="phone-frame">
+                                    <div class="phone-status-bar"><span class="js-clock"></span><span class="battery-icon"></span></div>
+                                    <div class="phone-slide is-active" data-caption="Síň slávy"><img class="phone-screen" data-light="../screens/sin-slavy-light.jpg" data-dark="../screens/sin-slavy-dark.jpg" alt="Síň slávy"></div>
+                                    <div class="phone-home-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        © 2026 V-arius. Všechna práva vyhrazena.<br>
+        <a href="../privacy/?lang=cs">Zásady ochrany osobních údajů</a>
+    </footer>
+
+    <script src="../site.js"></script>
+</body>
+</html>

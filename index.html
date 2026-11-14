@@ -2,55 +2,102 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V-arius | Balance Your Rhythm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>V-arius | Deník pro život na směny</title>
+    <meta name="description" content="V-arius je tréninkový a zdravotní deník pro lidi, kteří pracují na směny. Energie, spánek a trénink podle toho, kdy skutečně pracujete.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="layout.css">
 </head>
 <body>
 
+    <nav class="app-nav" aria-label="Navigace">
+        <a class="nav-item" href="./" aria-current="page">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21"/></svg>
+            Úvod
+        </a>
+        <a class="nav-item" href="funkce/">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>
+            Funkce
+        </a>
+        <a class="nav-item" href="privacy/?lang=cs">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6L12 3z"/><path d="M9 12l2 2 4-4"/></svg>
+            Soukromí
+        </a>
+    </nav>
+
     <main class="hero-section">
 
-        <!-- Deska ve stylu aplikace (FocusBoard) -->
         <div class="board">
             <div class="board-inner">
                 <div class="board-header">
                     <span class="board-dot"></span>
-                    <span class="board-title">V-arius • 10. 8. 2026</span>
+                    <span class="board-title">V-arius • <span class="js-today"></span></span>
                 </div>
                 <div class="board-divider"></div>
 
                 <div class="board-body">
                     <section class="section-card intro">
-                        <span class="chip">Vlastní projekt</span>
+                        <span class="chip">Deník pro život na směny</span>
 
-                        <h1>Trénink a mapy.<br>Ale tak trochu jinak.</h1>
+                        <h1>Trénink a zdraví<br>podle toho, kdy pracuji.</h1>
 
-                        <p>Běžné fitness aplikace mi vizuálně nesedly, tak si ve volném čase stavím vlastní. Zaměřuji se na netradiční uživatelské prostředí, čistší design map a trochu jiný způsob, jak zpracovávat a zobrazovat data z chytrých hodinek. Zatím systém ladím čistě pro sebe. Pokud tě tenhle směr zajímá, nech mi tu e-mail a dám ti vědět, až to uvolním ven.</p>
+                        <p>Sedmnáct let pracuji na směny. Ranní, odpolední, noční – a každý týden jinak. Aplikace na trénink a zdraví ale počítají s pravidelným životem: stejný budík, stejný spánek, plán „pondělí, středa, pátek“. Obecné tréninkové plány se mi do takového týdne nikdy nevešly.</p>
 
+                        <p>Proto vzniká V-arius. Všestranný deník, který zapisuje trénink, spánek, energii a zdraví s ohledem na to, kdy zrovna pracuji. Den nehodnotí podle obecné normy, ale podle toho, co skutečně přinesl.</p>
+                    </section>
+
+                    <section class="section-card">
+                        <h2 class="section-title">V čem je jiný</h2>
+                        <div class="highlights">
+                            <div class="highlight"><strong>Směny na prvním místě</strong><span>Ranní, odpolední, noční i 12hodinová rotace. Všechno ostatní se počítá od nich.</span></div>
+                            <div class="highlight"><strong>Energie podle skutečného dne</strong><span>Odhad únavy ze směny, spánku, tréninku i dojíždění – a předpověď na další dny.</span></div>
+                            <div class="highlight"><strong>Jeden deník na všechno</strong><span>Běh, posilovna, švihadlo, tanec, zápasy, vybavení i závody na jednom místě.</span></div>
+                            <div class="highlight"><strong>Data zůstávají v telefonu</strong><span>Žádný server, žádný účet, žádná reklama.</span></div>
+                        </div>
+                        <a class="cta-link" href="funkce/">Co všechno umí →</a>
+                    </section>
+
+                    <section class="section-card">
+                        <h2 class="section-title">Upozornění na vydání</h2>
+                        <p>Aplikace je zatím v testování. Kdo chce vědět, až bude k dispozici, může zanechat e-mail.</p>
                         <form class="newsletter-form" action="https://formspree.io/f/myegwydn" method="POST">
-                            <input type="email" name="email" placeholder="Zadej svůj e-mail..." required>
-                            <button type="submit">Chci vědět víc</button>
+                            <input type="email" name="email" placeholder="E-mail" required>
+                            <button type="submit">Dát vědět</button>
                         </form>
                     </section>
                 </div>
             </div>
         </div>
 
-        <!-- Maketa telefonu -->
-        <div class="phone-mockup">
-            <div class="phone-frame">
-                <div class="phone-status-bar">
-                    <span class="time">19:52</span>
-                    <span class="battery-icon"></span>
+        <!-- Klikací telefon: screeny v screens/, chybějící se ukážou jako místo pro ukázku -->
+        <div class="phone-gallery" data-gallery>
+            <div class="phone-mockup" title="Klepnutím zobrazíte další obrazovku">
+                <div class="phone-frame">
+                    <div class="phone-status-bar">
+                        <span class="js-clock"></span>
+                        <span class="battery-icon"></span>
+                    </div>
+                    <div class="phone-slide" data-caption="Přehled dne"><img class="phone-screen" data-light="screens/prehled-light.jpg" data-dark="screens/prehled-dark.jpg" alt="Přehled dne"></div>
+                    <div class="phone-slide" data-caption="Kalendář směn"><img class="phone-screen" data-light="screens/kalendar-light.jpg" data-dark="screens/kalendar-dark.jpg" alt="Kalendář směn"></div>
+                    <div class="phone-slide" data-caption="Energie"><img class="phone-screen" data-light="screens/energie-light.jpg" data-dark="screens/energie-dark.jpg" alt="Energie"></div>
+                    <div class="phone-slide" data-caption="Tréninkový plán"><img class="phone-screen" data-light="screens/plan-light.jpg" data-dark="screens/plan-dark.jpg" alt="Tréninkový plán"></div>
+                    <div class="phone-home-bar"></div>
                 </div>
-
-                <img src="bg-app.png" alt="Ukázka aplikace V-arius" class="phone-screen">
-
-                <div class="phone-home-bar"></div>
             </div>
+            <div class="mode-switch" role="group" aria-label="Vzhled">
+                <button type="button" data-mode="light">Světlý</button>
+                <button type="button" data-mode="dark">Tmavý</button>
+            </div>
+            <div class="gallery-caption"></div>
+            <div class="gallery-controls">
+                <button class="gallery-arrow" type="button" data-dir="-1" aria-label="Předchozí">‹</button>
+                <div class="gallery-dots"></div>
+                <button class="gallery-arrow" type="button" data-dir="1" aria-label="Další">›</button>
+            </div>
+            <p class="data-note">Ukázky obsahují skutečná data autora.</p>
         </div>
 
     </main>
@@ -60,5 +107,6 @@
         <a href="privacy/?lang=cs">Zásady ochrany osobních údajů</a>
     </footer>
 
+    <script src="site.js"></script>
 </body>
 </html>
