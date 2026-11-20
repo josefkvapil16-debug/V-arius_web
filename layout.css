@@ -349,3 +349,17 @@ html[data-screen-mode="light"] .battery-icon { border-color: #2A2118; }
 html[data-screen-mode="light"] .battery-icon::after,
 html[data-screen-mode="light"] .battery-icon::before { background-color: #2A2118; }
 html[data-screen-mode="light"] .phone-home-bar { background-color: rgba(42, 33, 24, 0.7); }
+
+/* --- PŘÍBĚH --- */
+.story-text h1 {
+    font-family: var(--font-display);
+    font-size: 1.9rem;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 14px 0 12px;
+}
+.story-text p + p { margin-top: 12px; }
+.story .feature-num { color: var(--copper-gold); font-weight: 700; }
+.story-text + .features-intro { margin-top: 12px; }
+.history-frame { background: #0E0F14; }
+.history-frame .phone-slide { top: 26px; }
