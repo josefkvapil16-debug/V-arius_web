@@ -272,6 +272,50 @@ body::after {
 .newsletter-form button:hover { background: rgba(199, 142, 86, 0.4); }
 .newsletter-form button:active { transform: scale(0.98); }
 
+/* Volba telefonu u upozornění na vydání */
+.platform-choice {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.platform-choice legend {
+    float: left;
+    margin-right: 6px;
+    font-family: var(--font-label);
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+}
+.platform-choice label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font: 1rem var(--font-body);
+    color: var(--ink);
+    cursor: pointer;
+}
+.newsletter-form .platform-choice input {
+    width: 20px;
+    height: 20px;
+    min-width: 0;
+    flex: none;
+    padding: 0;
+    margin: 0;
+    accent-color: var(--copper);
+}
+.form-error {
+    flex-basis: 100%;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #A4462F;
+}
+
 /* --- MAKETA TELEFONU --- */
 .phone-mockup {
     position: relative;
@@ -402,7 +446,7 @@ body::after {
     .intro p { font-size: 1rem; }
 
     .newsletter-form { flex-direction: column; }
-    .newsletter-form input,
+    .newsletter-form input[type="email"],
     .newsletter-form button { width: 100%; min-width: 0; }
 
     .phone-mockup {

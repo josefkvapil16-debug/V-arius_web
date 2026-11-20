@@ -88,3 +88,17 @@
     show(0);
   });
 })();
+
+// Upozornění na vydání: aspoň jeden telefon (iPhone / Android).
+document.querySelectorAll('.newsletter-form').forEach(function (f) {
+  var err = f.querySelector('.form-error');
+  f.addEventListener('submit', function (e) {
+    if (!f.querySelector('.platform-choice input:checked')) {
+      e.preventDefault();
+      if (err) err.hidden = false;
+    }
+  });
+  f.addEventListener('change', function () {
+    if (err && f.querySelector('.platform-choice input:checked')) err.hidden = true;
+  });
+});
