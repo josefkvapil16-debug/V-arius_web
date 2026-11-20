@@ -67,9 +67,15 @@
                             <input type="hidden" name="_subject" value="V-arius – upozornění na vydání">
                             <input type="email" name="email" placeholder="E-mail" required>
                             <fieldset class="platform-choice">
-                                <legend>Telefon</legend>
-                                <label><input type="checkbox" name="ios" value="ano"> iPhone</label>
-                                <label><input type="checkbox" name="android" value="ano"> Android</label>
+                                <legend>Na jakém telefonu?</legend>
+                                <label class="platform-chip">
+                                    <input type="checkbox" name="ios" value="ano">
+                                    <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 5h3"/></svg>iPhone<i class="tick" aria-hidden="true"></i></span>
+                                </label>
+                                <label class="platform-chip">
+                                    <input type="checkbox" name="android" value="ano">
+                                    <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>Android<i class="tick" aria-hidden="true"></i></span>
+                                </label>
                             </fieldset>
                             <p class="form-error" hidden>Vyberte prosím aspoň jeden telefon.</p>
                             <button type="submit">Dát vědět</button>
