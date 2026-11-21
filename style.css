@@ -509,3 +509,14 @@ body::after {
     color: var(--ink-faint);
 }
 .form-note a { color: inherit; text-decoration: underline; }
+.newsletter-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.newsletter-form [hidden] { display: none !important; }
+.form-done {
+    flex-basis: 100%;
+    margin: 0;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1.5px solid var(--copper-hi);
+    background: rgba(199, 142, 86, 0.18);
+    color: var(--ink);
+}

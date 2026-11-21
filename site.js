@@ -89,14 +89,29 @@
   });
 })();
 
-// Upozornění na vydání: aspoň jeden telefon (iPhone / Android).
+// Upozornění na vydání: aspoň jeden telefon (iPhone / Android), odeslání do
+// Google tabulky (Apps Script). Odpověď je kvůli CORS neprůhledná (no-cors),
+// takže úspěch = požadavek odešel.
 document.querySelectorAll('.newsletter-form').forEach(function (f) {
   var err = f.querySelector('.form-error');
+  var done = f.querySelector('.form-done');
+  var btn = f.querySelector('button[type="submit"]');
   f.addEventListener('submit', function (e) {
+    e.preventDefault();
     if (!f.querySelector('.platform-choice input:checked')) {
-      e.preventDefault();
-      if (err) err.hidden = false;
+      if (err) { err.textContent = 'Vyberte prosím aspoň jeden telefon.'; err.hidden = false; }
+      return;
     }
+    if (btn) btn.disabled = true;
+    fetch(f.dataset.endpoint, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(new FormData(f)) })
+      .then(function () {
+        f.querySelectorAll('input, fieldset, .consent, button, .form-error').forEach(function (el) { el.hidden = true; });
+        if (done) done.hidden = false;
+      })
+      .catch(function () {
+        if (err) { err.textContent = 'Odeslání se nepovedlo, zkuste to prosím znovu.'; err.hidden = false; }
+        if (btn) btn.disabled = false;
+      });
   });
   f.addEventListener('change', function () {
     if (err && f.querySelector('.platform-choice input:checked')) err.hidden = true;
