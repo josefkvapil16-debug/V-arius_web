@@ -363,3 +363,32 @@ html[data-screen-mode="light"] .phone-home-bar { background-color: rgba(42, 33, 
 .story-text + .features-intro { margin-top: 12px; }
 .history-frame { background: #0E0F14; }
 .history-frame .phone-slide { top: 26px; }
+
+/* --- STRÁNKA OTÁZKY --- */
+.faq-list details + details { border-top: 1px solid rgba(107, 86, 56, 0.15); }
+.faq-list summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    font-weight: 600;
+    color: var(--ink);
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+    content: "+";
+    flex-shrink: 0;
+    font-family: var(--font-label);
+    font-size: 1.1rem;
+    color: var(--copper-gold);
+    transition: transform 0.2s;
+}
+.faq-list details[open] summary::after { transform: rotate(45deg); }
+.faq-list details p { margin: 0 0 14px; }
+.faq-list details:first-child summary { padding-top: 4px; }
+.sources ul { list-style: none; margin-left: 0; }
+.sources li + li { margin-top: 12px; }
+.sources cite { font-style: normal; font-size: 0.82rem; color: var(--ink-faint); }
